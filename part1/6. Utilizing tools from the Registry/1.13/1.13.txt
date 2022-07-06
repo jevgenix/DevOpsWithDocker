@@ -1,0 +1,43 @@
+evgenii@Smirnovs-MacBook-Pro ~ % cd Desktop/MOOC/DevOpsWithDocker/part1/1.13
+evgenii@Smirnovs-MacBook-Pro 1.13 % docker build . -t backend && docker run -d -p 8000:8000 backend 
+[+] Building 136.0s (10/10) FINISHED                                                                                                                                          
+ => [internal] load build definition from Dockerfile                                                                                                                     0.0s
+ => => transferring dockerfile: 228B                                                                                                                                     0.0s
+ => [internal] load .dockerignore                                                                                                                                        0.0s
+ => => transferring context: 2B                                                                                                                                          0.0s
+ => [internal] load metadata for docker.io/library/golang:1.16                                                                                                           3.0s
+ => [1/5] FROM docker.io/library/golang:1.16@sha256:5f6a4662de3efc6d6bb812d02e9de3d8698eea16b8eb7281f03e6f3e8383018e                                                   113.0s
+ => => resolve docker.io/library/golang:1.16@sha256:5f6a4662de3efc6d6bb812d02e9de3d8698eea16b8eb7281f03e6f3e8383018e                                                     0.0s
+ => => sha256:ee419a0749d8b34b2e17513650626e50144e531f5f57faf9b06430bde588c095 7.07kB / 7.07kB                                                                           0.0s
+ => => sha256:c7869242ae9abf6340558e18846f64a05eb06f2eaf66c6bfa2dc66ff2c997976 53.61MB / 53.61MB                                                                        24.9s
+ => => sha256:9880592b351f34fa791bd7749a127063cd6a76b1190bd059c168696d700f6b04 5.14MB / 5.14MB                                                                           6.2s
+ => => sha256:79e277312aa1ba8dce542a30260fea7f797c4aaf264300a7d56683aa25e4fc16 1.79kB / 1.79kB                                                                           0.0s
+ => => sha256:fdd9934a374f1ba93d2da0983d2aac86c9b4bf6ca063aa108519d2588e0212ac 10.66MB / 10.66MB                                                                        13.3s
+ => => sha256:5f6a4662de3efc6d6bb812d02e9de3d8698eea16b8eb7281f03e6f3e8383018e 2.35kB / 2.35kB                                                                           0.0s
+ => => sha256:f37be3698694527b9e5af78494bbcb68f6b045af5247de8c988b24ef7dcd877e 54.67MB / 54.67MB                                                                        44.6s
+ => => sha256:1de0634a187f2a5eafe92e5c690219dc718710435d988d4ba609487163ae4b01 81.02MB / 81.02MB                                                                        73.3s
+ => => sha256:9a938e09ba822044d7faca93899063b0e86bd2dfbc9ff555ed78a28ff66a5e4c 99.70MB / 99.70MB                                                                        85.3s
+ => => extracting sha256:c7869242ae9abf6340558e18846f64a05eb06f2eaf66c6bfa2dc66ff2c997976                                                                                1.4s
+ => => extracting sha256:9880592b351f34fa791bd7749a127063cd6a76b1190bd059c168696d700f6b04                                                                                0.1s
+ => => extracting sha256:fdd9934a374f1ba93d2da0983d2aac86c9b4bf6ca063aa108519d2588e0212ac                                                                                0.2s
+ => => extracting sha256:f37be3698694527b9e5af78494bbcb68f6b045af5247de8c988b24ef7dcd877e                                                                                1.7s
+ => => sha256:ac405f4fc4530326e7c048de970150f35341949c6c1a81646e600f04cbcaa669 126B / 126B                                                                             112.9s
+ => => extracting sha256:1de0634a187f2a5eafe92e5c690219dc718710435d988d4ba609487163ae4b01                                                                                2.0s
+ => => extracting sha256:9a938e09ba822044d7faca93899063b0e86bd2dfbc9ff555ed78a28ff66a5e4c                                                                                2.4s
+ => => extracting sha256:ac405f4fc4530326e7c048de970150f35341949c6c1a81646e600f04cbcaa669                                                                                0.0s
+ => [internal] load build context                                                                                                                                        0.0s
+ => => transferring context: 31.14kB                                                                                                                                     0.0s
+ => [2/5] COPY . /usr/src/app                                                                                                                                            0.2s
+ => [3/5] WORKDIR /usr/src/app/example-backend                                                                                                                           0.0s
+ => [4/5] RUN go build                                                                                                                                                  15.5s
+ => [5/5] RUN go test ./...                                                                                                                                              3.6s
+ => exporting to image                                                                                                                                                   0.6s
+ => => exporting layers                                                                                                                                                  0.6s
+ => => writing image sha256:3c89832d7fb943dbb13104f1d6f1ef879638d04e6bdb7d6f1082c245aae43231                                                                             0.0s
+ => => naming to docker.io/library/backend                                                                                                                               0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+d6753383f028bc42dc0d4a9a321682974aa2d2998236f0337e1a560d702c6249
+evgenii@Smirnovs-MacBook-Pro 1.13 % curl http://localhost:8000/ping
+pong%                                                                                                                                                                         
+evgenii@Smirnovs-MacBook-Pro 1.13 % 

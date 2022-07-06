@@ -1,0 +1,8 @@
+When you create script, add your username as a tag before image tag.
+For example jevgenix/my-apache2
+
+After you login and push image using your tage and image name:
+docker push jevgenix/my-apache2
+
+URL: 
+https://hub.docker.com/repository/docker/jevgenix/my-apache2
