@@ -1,15 +1,21 @@
+
 docker pull devopsdockeruh/coursepage
+
 # create app inside heroku
 # download and install heroku
 brew tap heroku/brew && brew install heroku
+
 # give image a tag
 docker tag devopsdockeruh/coursepage registry.heroku.com/example-coursepage/web
 
-# login to heroku
-
+# login to heroku and container:login
 heroku login
 heroku container:login
+
+# push to docker
 docker push registry.heroku.com/example-coursepage/web
+
+# release
 heroku container:release web -a example-coursepage
 
 Heroku URL:

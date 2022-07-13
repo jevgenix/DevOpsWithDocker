@@ -1,6 +1,6 @@
 FROM golang:1.16
 
-EXPOSE 8000
+EXPOSE 8080
 
 COPY . /usr/src/app
 

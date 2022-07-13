@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  simple-web-service:
+    image: devopsdockeruh/simple-web-service
+    ports: 
+      - 8080:8080
+    command: server
+    container_name: simple-web-server
+
+    
+# evgenii@Smirnovs-MacBook-Pro 2.2 % curl localhost:8080
+# {"message":"You connected to the following path: /","path":"/"}% 

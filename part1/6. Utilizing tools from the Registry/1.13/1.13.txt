@@ -1,5 +1,5 @@
 evgenii@Smirnovs-MacBook-Pro ~ % cd Desktop/MOOC/DevOpsWithDocker/part1/1.13
-evgenii@Smirnovs-MacBook-Pro 1.13 % docker build . -t backend && docker run -d -p 8000:8000 backend 
+evgenii@Smirnovs-MacBook-Pro 1.13 % docker build . -t backend && docker run -d -p 8080:8080 backend 
 [+] Building 136.0s (10/10) FINISHED                                                                                                                                          
  => [internal] load build definition from Dockerfile                                                                                                                     0.0s
  => => transferring dockerfile: 228B                                                                                                                                     0.0s
@@ -38,6 +38,6 @@ evgenii@Smirnovs-MacBook-Pro 1.13 % docker build . -t backend && docker run -d -
 
 Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
 d6753383f028bc42dc0d4a9a321682974aa2d2998236f0337e1a560d702c6249
-evgenii@Smirnovs-MacBook-Pro 1.13 % curl http://localhost:8000/ping
+evgenii@Smirnovs-MacBook-Pro 1.13 % curl http://localhost:8080/ping
 pong%                                                                                                                                                                         
 evgenii@Smirnovs-MacBook-Pro 1.13 % 
